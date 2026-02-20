@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" width="600" height="720">
+  <defs>
+    <linearGradient id="faithGrad" x1="0%" y1="20%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#34688a"/>
+      <stop offset="100%" stop-color="#24496a"/>
+    </linearGradient>
+    <linearGradient id="hopeGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#8a7a48"/>
+      <stop offset="100%" stop-color="#6b5c32"/>
+    </linearGradient>
+    <linearGradient id="loveGrad" x1="100%" y1="20%" x2="0%" y2="80%">
+      <stop offset="0%" stop-color="#9a4444"/>
+      <stop offset="100%" stop-color="#7a3030"/>
+    </linearGradient>
+    <linearGradient id="hopeHighlight" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#9a8a55" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#8a7a48" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="3" dy="6" stdDeviation="10" flood-color="#2C2824" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <!--
+    True top-down tetrahedron geometry:
+    Outer triangle (base, viewed from above) is equilateral.
+    The apex projects to the centroid of the base triangle.
+    Three visible faces each connect one edge of the base to the centroid (apex below).
+
+    Outer equilateral triangle vertices (base), centered at (300, 250):
+      Top:          (300,  70)
+      Bottom-left:  (110, 400)
+      Bottom-right: (490, 400)
+
+    Centroid (true center): (300, 290)
+    Dead-center overhead view — all three faces exactly equal.
+  -->
+
+  <g filter="url(#shadow)">
+    <!-- Left face: Faith (blue) — top vertex to bottom-left vertex to centroid -->
+    <polygon
+      points="300,70 110,400 300,290"
+      fill="url(#faithGrad)"
+    />
+
+    <!-- Right face: Love (red) — top vertex to bottom-right vertex to centroid -->
+    <polygon
+      points="300,70 490,400 300,290"
+      fill="url(#loveGrad)"
+    />
+
+    <!-- Bottom face: Hope (gold) — bottom-left to bottom-right to centroid -->
+    <polygon
+      points="110,400 490,400 300,290"
+      fill="url(#hopeGrad)"
+    />
+    <polygon
+      points="110,400 490,400 300,290"
+      fill="url(#hopeHighlight)"
+    />
+
+    <!-- Edge lines — outer triangle -->
+    <line x1="300" y1="70" x2="110" y2="400" stroke="#1a1a1a" stroke-width="1" stroke-opacity="0.1"/>
+    <line x1="300" y1="70" x2="490" y2="400" stroke="#1a1a1a" stroke-width="1" stroke-opacity="0.1"/>
+    <line x1="110" y1="400" x2="490" y2="400" stroke="#1a1a1a" stroke-width="1" stroke-opacity="0.1"/>
+
+    <!-- Edge lines — inner edges to centroid -->
+    <line x1="300" y1="70" x2="300" y2="290" stroke="#1a1a1a" stroke-width="1.2" stroke-opacity="0.18"/>
+    <line x1="110" y1="400" x2="300" y2="290" stroke="#1a1a1a" stroke-width="1.2" stroke-opacity="0.18"/>
+    <line x1="490" y1="400" x2="300" y2="290" stroke="#1a1a1a" stroke-width="1.2" stroke-opacity="0.18"/>
+  </g>
+
+  <!-- FAHOLO wordmark -->
+  <text x="300" y="530"
+    text-anchor="middle"
+    font-family="'Cormorant Garamond', Georgia, serif"
+    font-size="72"
+    font-weight="600"
+    letter-spacing="18"
+    fill="#3A3530">
+    <tspan fill="#2D5A7B">FA</tspan><tspan fill="#7B6B3D">HO</tspan><tspan fill="#8B3A3A">LO</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="300" y="568"
+    text-anchor="middle"
+    font-family="'Inter', -apple-system, sans-serif"
+    font-size="14"
+    font-weight="400"
+    letter-spacing="5"
+    fill="#6B6560">
+    FAITH · HOPE · LOVE
+  </text>
+</svg>

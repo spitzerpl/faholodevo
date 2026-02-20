@@ -1,0 +1,860 @@
+/* ========================================
+   FAHOLO Website Styles
+   ======================================== */
+
+:root {
+  --color-faith: #2D5A7B;
+  --color-hope: #7B6B3D;
+  --color-love: #8B3A3A;
+  --color-bg: #FAF8F5;
+  --color-bg-warm: #F3EDE4;
+  --color-bg-dark: #2C2824;
+  --color-text: #3A3530;
+  --color-text-light: #6B6560;
+  --color-text-inverse: #FAF8F5;
+  --color-border: #E0D8CE;
+  --color-accent: #6B4C3B;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --max-width: 1100px;
+  --nav-height: 64px;
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.7;
+  font-size: 16px;
+}
+a { color: var(--color-faith); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---- Typography ---- */
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+  margin-bottom: 2.5rem;
+  max-width: 640px;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  font-family: var(--font-sans);
+}
+.btn-primary {
+  background: var(--color-faith);
+  color: #fff;
+}
+.btn-primary:hover { background: #1E4460; text-decoration: none; }
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.7);
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
+.btn-large { padding: 14px 36px; font-size: 1.05rem; }
+
+/* ---- Navigation ---- */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  background: rgba(250,248,245,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 1000;
+  transition: box-shadow 0.3s;
+}
+.nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.logo-fa { color: var(--color-faith); }
+.logo-ho { color: var(--color-hope); }
+.logo-lo { color: var(--color-love); }
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+  align-items: center;
+}
+.nav-links a {
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--color-faith); text-decoration: none; }
+.nav-cta {
+  background: var(--color-faith);
+  color: #fff !important;
+  padding: 8px 20px;
+  border-radius: 6px;
+}
+.nav-cta:hover { background: #1E4460; }
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--color-text);
+  transition: 0.3s;
+}
+
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-bg-dark) 0%, #3D3530 50%, #4A3D35 100%);
+  padding: calc(var(--nav-height) + 40px) 24px 80px;
+  overflow: hidden;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(45,90,123,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(139,58,58,0.1) 0%, transparent 60%);
+}
+.hero-content {
+  position: relative;
+  max-width: 700px;
+}
+.hero-logo {
+  display: block;
+  width: 160px;
+  margin: 0 auto 20px;
+  filter: drop-shadow(0 6px 20px rgba(0,0,0,0.35));
+}
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  letter-spacing: 0.15em;
+}
+.hero-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-style: normal;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.title-fa { color: #6BA3CC; }
+.title-ho { color: #C4AB6A; }
+.title-lo { color: #CC7070; }
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---- Intro ---- */
+.intro {
+  padding: 80px 0;
+  text-align: center;
+}
+.intro-quote {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--color-text);
+  max-width: 600px;
+  margin: 0 auto 12px;
+  border: none;
+  padding: 0;
+}
+.intro-quote cite {
+  display: block;
+  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  font-style: normal;
+  color: var(--color-text-light);
+  margin-top: 8px;
+}
+.intro-text {
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+  max-width: 640px;
+  margin: 32px auto 0;
+  line-height: 1.8;
+}
+
+/* ---- Devotionals Grid ---- */
+.devotionals {
+  padding: 80px 0;
+  background: var(--color-bg-warm);
+}
+/* ---- Carousel ---- */
+.carousel {
+  position: relative;
+  padding: 0 48px;
+}
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 8px 0 16px;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--color-text);
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-btn:hover {
+  background: var(--color-bg-warm);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.carousel-btn-prev { left: 0; }
+.carousel-btn-next { right: 0; }
+
+.devotional-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 28px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+  min-width: 320px;
+  max-width: 360px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+.devotional-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+.devotional-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.devotional-card[data-theme="faith"]::before { background: var(--color-faith); }
+.devotional-card[data-theme="hope"]::before { background: var(--color-hope); }
+.devotional-card[data-theme="love"]::before { background: var(--color-love); }
+.devotional-card[data-theme="all"]::before {
+  background: linear-gradient(90deg, var(--color-faith), var(--color-hope), var(--color-love));
+}
+.devotional-number {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: 6px;
+}
+.devotional-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.devotional-card .verse-ref {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: 12px;
+}
+.devotional-card .preview {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.devotional-tags {
+  display: flex;
+  gap: 6px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.tag-faith { background: rgba(45,90,123,0.1); color: var(--color-faith); }
+.tag-hope { background: rgba(123,107,61,0.1); color: var(--color-hope); }
+.tag-love { background: rgba(139,58,58,0.1); color: var(--color-love); }
+
+/* ---- Coming Soon Card ---- */
+.coming-soon-card {
+  border-style: dashed;
+  background: var(--color-bg);
+  cursor: default;
+}
+.coming-soon-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+.coming-soon-card h3 {
+  color: var(--color-text-light);
+}
+.coming-soon-list {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.coming-soon-references {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  line-height: 1.8;
+  font-family: var(--font-serif);
+}
+
+/* ---- Mid CTA ---- */
+.mid-cta {
+  padding: 80px 0;
+  text-align: center;
+  background: var(--color-bg-dark);
+  color: var(--color-text-inverse);
+}
+.mid-cta h2 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+.mid-cta p { color: rgba(255,255,255,0.75); margin-bottom: 28px; }
+
+/* ---- Signup Forms ---- */
+.signup-form { display: flex; gap: 10px; flex-wrap: wrap; }
+.signup-form-inline { justify-content: center; }
+.signup-form-centered {
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+.signup-form input {
+  padding: 12px 18px;
+  border: 2px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  background: #fff;
+  color: var(--color-text);
+  min-width: 240px;
+}
+.signup-form input:focus {
+  outline: none;
+  border-color: var(--color-faith);
+}
+.mid-cta .signup-form input { border-color: rgba(255,255,255,0.2); }
+.form-note {
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  margin-top: 12px;
+}
+.mid-cta .form-note { color: rgba(255,255,255,0.5); }
+.form-success {
+  padding: 16px 24px;
+  background: rgba(45,90,123,0.1);
+  border-radius: 8px;
+  color: var(--color-faith);
+  font-weight: 500;
+}
+.mid-cta .form-success {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+/* ---- Kit Form Embed ---- */
+.kit-form-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.mid-cta .kit-form-wrapper {
+  max-width: 460px;
+}
+
+/* ---- Book Section ---- */
+.book { padding: 100px 0; }
+.book-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.book-cover-placeholder {
+  background: linear-gradient(160deg, var(--color-bg-dark) 0%, #4A3D35 100%);
+  border-radius: 4px;
+  padding: 40px 28px;
+  aspect-ratio: 2/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 8px 8px 30px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+.book-cover-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.1), transparent);
+}
+.book-cover-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.book-cover-subtitle {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 24px;
+}
+.book-cover-author {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.book-info .section-title { margin-bottom: 8px; }
+.book-title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+.book-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+}
+.book-info p {
+  margin-bottom: 16px;
+  color: var(--color-text-light);
+  line-height: 1.8;
+}
+.book-info .btn { margin-top: 10px; }
+
+/* ---- About ---- */
+.about {
+  padding: 80px 0;
+  background: var(--color-bg-warm);
+}
+.about-content {
+  max-width: 700px;
+}
+.about-content p {
+  margin-bottom: 16px;
+  color: var(--color-text-light);
+  line-height: 1.8;
+}
+
+/* ---- Subscribe Section ---- */
+.subscribe {
+  padding: 100px 0;
+  text-align: center;
+}
+.subscribe .section-title { margin-bottom: 12px; }
+.subscribe .section-subtitle { margin: 0 auto 32px; }
+
+/* ---- Footer ---- */
+.footer {
+  background: var(--color-bg-dark);
+  color: var(--color-text-inverse);
+  padding: 40px 0;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.footer-logo-icon {
+  width: 36px;
+  height: 36px;
+}
+.footer-brand p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 6px;
+}
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+.footer-links a {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+}
+.footer-links a:hover { color: #fff; }
+.footer-esv {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.35);
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  line-height: 1.6;
+}
+.footer-esv a {
+  color: rgba(255,255,255,0.45);
+  text-decoration: underline;
+}
+.footer-esv a:hover { color: #fff; }
+
+/* ---- Modal ---- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow-y: auto;
+}
+.modal-overlay.active { display: flex; }
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 720px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalIn 0.3s ease;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.modal-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  background: var(--color-bg);
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--color-text-light);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 16px 0 0;
+  z-index: 1;
+}
+.modal-close:hover { background: var(--color-border); }
+.modal-content {
+  padding: 12px 40px 32px;
+}
+.modal-content h2 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.modal-content .modal-verse-ref {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+}
+.modal-content .modal-scripture {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--color-text);
+  padding: 20px 24px;
+  background: var(--color-bg-warm);
+  border-left: 3px solid var(--color-hope);
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 24px;
+}
+/* FAHOLO keyword highlights in scripture — soft pill highlights */
+.faholo-faith, .faholo-hope, .faholo-love {
+  font-weight: 700;
+  font-style: italic;
+  padding: 1px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.faholo-faith {
+  color: var(--color-faith);
+  background: rgba(45, 90, 123, 0.12);
+}
+.faholo-hope {
+  color: var(--color-hope);
+  background: rgba(123, 107, 61, 0.15);
+}
+.faholo-love {
+  color: var(--color-love);
+  background: rgba(139, 58, 58, 0.12);
+}
+
+.modal-content .modal-body p {
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+.modal-content .modal-body h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+.modal-content .modal-body h3.faith-heading { color: var(--color-faith); }
+.modal-content .modal-body h3.hope-heading { color: var(--color-hope); }
+.modal-content .modal-body h3.love-heading { color: var(--color-love); }
+.modal-content .modal-body em {
+  font-style: italic;
+  color: var(--color-text-light);
+}
+/* Bold verse-number links (custom — RefTagger won't handle these) */
+a.bible-ref.verse-num {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--color-accent);
+  transition: border-color 0.2s, color 0.2s;
+}
+a.bible-ref.verse-num:hover {
+  color: var(--color-faith);
+  border-bottom-style: solid;
+}
+
+/* ---- RefTagger tooltip z-index fix ---- */
+/* RefTagger popups render at body level and need to appear above the modal (z-index: 2000) */
+.rtTooltip, .rtBibleRefPopup, [class*="rtTooltip"], div[id*="reftagger"] {
+  z-index: 2500 !important;
+}
+
+/* ---- Verse Tooltip ---- */
+.verse-tooltip {
+  position: absolute;
+  z-index: 3000;
+  max-width: 380px;
+  min-width: 200px;
+  background: var(--color-bg-dark);
+  color: var(--color-text-inverse);
+  border-radius: 8px;
+  padding: 14px 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+.verse-tooltip.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.verse-tooltip-ref {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #C4AB6A;
+  margin-bottom: 6px;
+}
+.verse-tooltip-text {
+  color: rgba(255,255,255,0.9);
+  max-height: 200px;
+  overflow-y: auto;
+}
+.verse-tooltip-version {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  text-align: right;
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.verse-tooltip em {
+  color: rgba(255,255,255,0.6);
+}
+.verse-tooltip small {
+  color: rgba(255,255,255,0.5);
+}
+
+.modal-footer {
+  padding: 16px 40px;
+  background: var(--color-bg-warm);
+  border-radius: 0 0 12px 12px;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  text-align: center;
+}
+.modal-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.modal-footer-actions p { margin: 0; }
+.copy-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--color-text-light);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.copy-link-btn:hover {
+  background: var(--color-faith);
+  color: #fff;
+  border-color: var(--color-faith);
+}
+.copy-link-btn svg { flex-shrink: 0; }
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0; right: 0;
+    background: var(--color-bg);
+    flex-direction: column;
+    padding: 20px 24px;
+    gap: 16px;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  .nav-links.open { display: flex; }
+  .hero-title { font-size: 3rem; }
+  .hero-logo { width: 120px; height: 120px; }
+  .hero { min-height: 70vh; }
+  .section-title { font-size: 1.9rem; }
+  .book-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .book-cover { max-width: 220px; }
+  .carousel { padding: 0 36px; }
+  .devotional-card { min-width: 280px; max-width: none; width: 85vw; }
+  .modal-content { padding: 12px 24px 24px; }
+  .modal-footer { padding: 16px 24px; }
+  .signup-form input { min-width: auto; width: 100%; }
+  .signup-form-inline { flex-direction: column; align-items: center; }
+  .signup-form-inline input { width: 100%; max-width: 360px; }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: 2.4rem; }
+  .hero-logo { width: 100px; height: 100px; }
+  .hero-tagline { font-size: 0.8rem; }
+  .hero-subtitle { font-size: 1rem; }
+}

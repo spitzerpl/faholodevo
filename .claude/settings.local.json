@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__c1fc4002-5f49-5f9d-a4e5-93c4ef5d6a75__google_drive_search",
+      "mcp__c1fc4002-5f49-5f9d-a4e5-93c4ef5d6a75__google_drive_fetch",
+      "WebFetch(domain:biblia.com)",
+      "WebFetch(domain:www.logos.com)",
+      "WebFetch(domain:api.reftagger.com)",
+      "WebFetch(domain:api.biblia.com)",
+      "WebFetch(domain:bibliaapi.com)",
+      "WebFetch(domain:faithlife.com)",
+      "WebFetch(domain:support.faithlife.com)",
+      "WebFetch(domain:support.proclaimonline.com)",
+      "WebFetch(domain:support.proclaim.logos.com)",
+      "WebFetch(domain:support.logos.com)",
+      "WebFetch(domain:logos.com)",
+      "Bash(if not exist \"C:\\\\Users\\\\spitz\\\\OneDrive\\\\FAHOLO\\\\Website\\\\devotionals\" mkdir \"C:\\\\Users\\\\spitz\\\\OneDrive\\\\FAHOLO\\\\Website\\\\devotionals\")",
+      "Bash(where.exe:*)",
+      "Bash(ls \"C:\\\\Users\\\\spitz\\\\OneDrive\\\\FAHOLO\\\\Website\\\\devotionals\"\" | wc -l && ls \"C:UsersspitzOneDriveFAHOLOWebsitedevotionals\"\")"
+    ]
+  }
+}

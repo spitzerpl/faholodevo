@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360" width="400" height="360">
+  <defs>
+    <linearGradient id="faithGrad" x1="0%" y1="20%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#34688a"/>
+      <stop offset="100%" stop-color="#24496a"/>
+    </linearGradient>
+    <linearGradient id="hopeGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#8a7a48"/>
+      <stop offset="100%" stop-color="#6b5c32"/>
+    </linearGradient>
+    <linearGradient id="loveGrad" x1="100%" y1="20%" x2="0%" y2="80%">
+      <stop offset="0%" stop-color="#9a4444"/>
+      <stop offset="100%" stop-color="#7a3030"/>
+    </linearGradient>
+    <linearGradient id="hopeHighlight" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#9a8a55" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#8a7a48" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!--
+    Equilateral triangle base, dead-center overhead view.
+    Top: (200, 20), Bottom-left: (25, 340), Bottom-right: (375, 340)
+    True centroid: (200, 233)
+  -->
+  <g>
+    <!-- Left face: Faith (blue) -->
+    <polygon points="200,20 25,340 200,233" fill="url(#faithGrad)"/>
+    <!-- Right face: Love (red) -->
+    <polygon points="200,20 375,340 200,233" fill="url(#loveGrad)"/>
+    <!-- Bottom face: Hope (gold) -->
+    <polygon points="25,340 375,340 200,233" fill="url(#hopeGrad)"/>
+    <polygon points="25,340 375,340 200,233" fill="url(#hopeHighlight)"/>
+    <!-- Outer edges -->
+    <line x1="200" y1="20" x2="25" y2="340" stroke="#1a1a1a" stroke-width="1" stroke-opacity="0.1"/>
+    <line x1="200" y1="20" x2="375" y2="340" stroke="#1a1a1a" stroke-width="1" stroke-opacity="0.1"/>
+    <line x1="25" y1="340" x2="375" y2="340" stroke="#1a1a1a" stroke-width="1" stroke-opacity="0.1"/>
+    <!-- Inner edges to centroid -->
+    <line x1="200" y1="20" x2="200" y2="233" stroke="#1a1a1a" stroke-width="1.2" stroke-opacity="0.18"/>
+    <line x1="25" y1="340" x2="200" y2="233" stroke="#1a1a1a" stroke-width="1.2" stroke-opacity="0.18"/>
+    <line x1="375" y1="340" x2="200" y2="233" stroke="#1a1a1a" stroke-width="1.2" stroke-opacity="0.18"/>
+  </g>
+</svg>
