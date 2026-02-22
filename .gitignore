@@ -1,0 +1,9 @@
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore your AI config folder if you want it private
+.claude/
+
+# IMPORTANT: If you have massive library folders, add them here
+# Example: node_modules/
