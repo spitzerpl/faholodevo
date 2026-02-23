@@ -260,6 +260,36 @@ function openModal(dev) {
     });
   };
 
+  // ---- Study / Reflection mode toggle ----
+  const modalBody = content.querySelector('.modal-body');
+  const hasProse = modalBody && modalBody.querySelector('a.bible-ref.prose-ref');
+  const toggleRow = document.getElementById('modeToggleRow');
+  const toggle = document.getElementById('modeToggle');
+  const studyLabel = document.getElementById('studyLabel');
+  const reflectionLabel = document.getElementById('reflectionLabel');
+
+  if (hasProse && toggleRow && toggle) {
+    toggleRow.style.display = '';
+    const savedMode = localStorage.getItem('faholo-mode');
+    const isReflection = savedMode === 'reflection';
+
+    toggle.checked = isReflection;
+    modalBody.classList.toggle('reflection-mode', isReflection);
+    studyLabel.classList.toggle('active', !isReflection);
+    reflectionLabel.classList.toggle('active', isReflection);
+
+    toggle.onchange = () => {
+      const refl = toggle.checked;
+      modalBody.classList.toggle('reflection-mode', refl);
+      studyLabel.classList.toggle('active', !refl);
+      reflectionLabel.classList.toggle('active', refl);
+      localStorage.setItem('faholo-mode', refl ? 'reflection' : 'study');
+    };
+  } else if (toggleRow) {
+    toggleRow.style.display = 'none';
+    if (toggle) toggle.onchange = null;
+  }
+
   // Let RefTagger detect and link standard references in the modal
   triggerRefTagger(content);
 
@@ -362,7 +392,7 @@ function initVerseTooltips(container) {
   // Target ALL bible links in the modal: our verse-num links AND RefTagger-created links.
   // RefTagger's own popups don't work on dynamically tagged modal content,
   // so our custom tooltip handles everything inside the modal.
-  const links = container.querySelectorAll('a.bible-ref.verse-num, a.rtBibleRef');
+  const links = container.querySelectorAll('a.bible-ref.verse-num, a.rtBibleRef, a.bible-ref.prose-ref');
   links.forEach(link => {
     link.addEventListener('mouseenter', handleVerseHover);
     link.addEventListener('mouseleave', handleVerseLeave);

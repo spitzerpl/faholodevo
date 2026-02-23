@@ -1370,7 +1370,9 @@
           <a href="#about">About</a>
         </nav>
       </div>
-      <p class="footer-esv">Scripture quotations are from the ESV&reg; Bible (The Holy Bible, English Standard Version&reg;), &copy; 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. <a href="https://www.esv.org" target="_blank" rel="noopener">esv.org</a></p>
+      <p class="footer-esv">Scripture quotations are from the ESV&reg; Bible (The Holy Bible, English Standard
+        Version&reg;), &copy; 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All
+        rights reserved. <a href="https://www.esv.org" target="_blank" rel="noopener">esv.org</a></p>
     </div>
   </footer>
 
@@ -1378,6 +1380,14 @@
   <div class="modal-overlay" id="modalOverlay">
     <div class="modal" id="modal">
       <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <div class="mode-toggle-row" id="modeToggleRow" style="display:none">
+        <span class="mode-label active" id="studyLabel">Study</span>
+        <label class="mode-toggle">
+          <input type="checkbox" id="modeToggle">
+          <span class="mode-toggle-slider"></span>
+        </label>
+        <span class="mode-label" id="reflectionLabel">Reflection</span>
+      </div>
       <div class="modal-content" id="modalContent"></div>
       <div class="modal-footer">
         <div class="modal-footer-actions">
